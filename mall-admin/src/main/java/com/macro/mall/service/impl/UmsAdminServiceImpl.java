@@ -11,6 +11,7 @@ import com.macro.mall.common.constant.AuthConstant;
 import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.dao.UmsAdminRoleRelationDao;
+import com.macro.mall.dto.Oauth2TokenDto;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.mapper.UmsAdminLoginLogMapper;
@@ -88,7 +89,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     @Override
-    public CommonResult login(String username, String password) {
+    public CommonResult<Oauth2TokenDto> login(String username, String password) {
         if(StrUtil.isEmpty(username)||StrUtil.isEmpty(password)){
             Asserts.fail("用户名或密码不能为空！");
         }
@@ -98,7 +99,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         params.put("grant_type","password");
         params.put("username",username);
         params.put("password",password);
-        CommonResult restResult = authService.getAccessToken(params);
+        CommonResult<Oauth2TokenDto> restResult = authService.getAccessToken(params);
         if(ResultCode.SUCCESS.getCode()==restResult.getCode()&&restResult.getData()!=null){
 //            updateLoginTimeByUsername(username);
             insertLoginLog(username);
