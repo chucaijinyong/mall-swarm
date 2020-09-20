@@ -5,7 +5,7 @@ spring:
     password: 123456
   elasticsearch:
     rest:
-      uris: http://es:9200
+      uris: 192.168.37.1:9200 http://es:9200
 management:
   health:
     elasticsearch:

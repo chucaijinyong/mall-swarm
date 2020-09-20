@@ -14,11 +14,11 @@ spring:
     port: 6379 # Redis服务器连接端口
     password: # Redis服务器连接密码（默认为空）
   rabbitmq:
-    host: localhost
+    host: 192.168.56.10
     port: 5672
-    virtual-host: /mall
-    username: mall
-    password: mall
+    virtual-host: /twomall
+    username: twomall
+    password: twomall
 # 日志配置
 logging:
   level:

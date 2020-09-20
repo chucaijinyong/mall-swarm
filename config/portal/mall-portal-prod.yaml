@@ -14,11 +14,11 @@ spring:
     port: 6379 # Redis服务器连接端口
     password: #不设置密码
   rabbitmq:
-    host: rabbit
+    host: 192.168.56.10
     port: 5672
-    virtual-host: /mall
-    username: mall
-    password: mall
+    virtual-host: /twomall
+    username: twomall
+    password: twomall
     publisher-confirms: true #如果对异步消息需要回调必须设置为true
 logging:
   file:

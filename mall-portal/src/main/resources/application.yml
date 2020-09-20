@@ -26,11 +26,11 @@ spring:
     password:  # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
   rabbitmq:
-    host: localhost
+    host: 192.168.56.10
     port: 5672
-    virtual-host: /mall
-    username: mall
-    password: mall
+    virtual-host: /twomall
+    username: twomall
+    password: twomall
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
